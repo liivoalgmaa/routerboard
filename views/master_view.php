@@ -6,7 +6,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>pealkiri</title>
+	<title>Pealkiri</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width">
 
@@ -49,10 +49,10 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="brand" href="#">Muuda Mind</a>
+			<a class="brand" href="#">Projekti nimi</a>
 			<div class="nav-collapse collapse">
 				<ul class="nav">
-					<li class="active"><a href="<?=BASE_URL?>tests">Testid</a></li>
+					<li class="active"><a href="<?=BASE_URL?>tests">Esimene leht</a></li>
 					<li><a href="#about">Info</a></li>
 					<li><a href="<?=BASE_URL?>auth/logout">Logi välja</a></li>
 				</ul>
