@@ -16,25 +16,25 @@ class Request // objekt
 
 	public function __construct() // funktsioon saab olla ainult klassis/ väljakutsumine: ->/ klassis ees funktsioon on meetod
 	{
-		// kas on olemas $_SERVER-is PATH_INFO ehk kas kasutaja on kirjutanud midagi aadressirea lõppu
-		// $_SERVER['PATH_INFO'] = /kasutajad/vaatamine/23
+// kas on olemas $_SERVER-is PATH_INFO ehk kas kasutaja on kirjutanud midagi aadressirea lõppu
+// $_SERVER['PATH_INFO'] = /kasutajad/vaatamine/23
 		if (isset($_SERVER['PATH_INFO'])) {
-			//eraldab stringi liikmed tekitab array, kus liikmete vahel / ja paneb selle path_info-ks
+//eraldab stringi liikmed tekitab array, kus liikmete vahel / ja paneb selle path_info-ks
 			if ($path_info = explode('/', $_SERVER['PATH_INFO'])) { // explode ülemise järgi tekitab 4 liiget
-				// läheb käima kui $path_info ei tagasta FALSE-i(juhul kui pole ühtegi / märki)
+// läheb käima kui $path_info ei tagasta FALSE-i(juhul kui pole ühtegi / märki)
 				array_shift($path_info); // array_shift kustutab ära esimese liikme ja reastab liikmed uuesti(uus 0)
-				// $this viitab käesolevale klassile (Request)
-				$this->controller = isset($path_info[0]) ? array_shift($path_info) : 'welcome';
-				// array_shift võtab path_infost esimese liikme ära ja tagastab selle controllerisse
+// $this viitab käesolevale klassile (Request)
+				$this->controller = isset($path_info[0]) ? array_shift($path_info) : 'products';
+// array_shift võtab path_infost esimese liikme ära ja tagastab selle controllerisse
 				$this->action = isset($path_info[0]) && ! empty($path_info[0]) ? array_shift($path_info) : 'index';
 				$this->params = isset($path_info[0]) ? $path_info : NULL; // parameters
 			}
 		}
 	}
-	// ümbersuunamine
+// ümbersuunamine
 	public function redirect($destination){
 		header('Location: '.BASE_URL.$destination); // header - aadressiribale, Location: peab olema
-		// saab väärtuse kui $request->redirect(väärtus)
+// saab väärtuse kui $request->redirect(väärtus)
 	}
 }
 
